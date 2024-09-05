@@ -30,7 +30,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const listid = searchParams.get('listid'); 
   const pagesize = parseInt(searchParams.get('pagesize') || '50', 10);
-  const apikey = "4c652fc2-e341-4543-8787-74eacbd98285";
+  const apikey = searchParams.get('apikey');
 
   // Validate parameters
   if (!listid) {
